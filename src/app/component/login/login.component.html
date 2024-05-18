@@ -1,0 +1,60 @@
+ 
+<div
+  class="card"
+  style="
+    padding: 20px;
+    margin: auto;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  "
+>
+  <h3 class="card-title" style="margin: auto">Iniciar Sesión</h3>
+  <form>
+    <div>
+      <div class="mb-3">
+        <label for="id" class="form-label">Identificación</label>
+
+        <div>
+          <input
+            type="number"
+            class="form-control"
+            id="id"
+            name="id"
+            [(ngModel)]="patient.id"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="contrasena" class="form-label">Contraseña</label>
+      <input
+        type="password"
+        class="form-control"
+        id="contrasena"
+        name="contrasena"
+        [(ngModel)]="patient.contrasena"
+      />
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: space-around;">
+      <button
+        class="btn btn-success"
+        type="submit"
+        (click)="login()"
+      >
+        Iniciar
+      </button>
+  
+      <button
+        class="btn btn-success"
+        type="submit"
+        (click)="register()"
+      >
+        Registrarse
+      </button>
+    </div>
+    
+  </form>
+</div>

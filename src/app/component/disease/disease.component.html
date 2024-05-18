@@ -1,0 +1,106 @@
+<app-menu></app-menu>
+<div
+  class="card"
+  style="
+    padding: 20px;
+    margin: auto;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  "
+>
+  <h3 class="card-title" style="margin: auto">Registrar Enfermedad</h3>
+  <form>
+    <div>
+      <div class="mb-3">
+        <label for="id" class="form-label">Identificación</label>
+
+        <div style="display: flex; flex-direction: row">
+          <div>
+            <input
+              type="number"
+              class="form-control"
+              id="id"
+              name="id"
+              [(ngModel)]="disease.id"
+              [disabled]="mode === 'edit'"
+            />
+          </div>
+
+          <div>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              style="margin-left: 20px"
+              (click)="getDisease()"
+            >
+              Consultar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="enfermedad" class="form-label"
+        >Enfermedad</label>
+      
+      <input
+        type="text"
+        class="form-control"
+        id="enfermedad"
+        name="enfermedad"
+        [(ngModel)]="disease.enfermedad"
+        [disabled]="mode === 'edit'"
+      />
+    </div>
+
+    
+
+    <div class="mb-3">
+      <label for="descripcion_enfermedad" class="form-label">Descripción de la Enfermedad</label>
+      <input
+        type="text"
+        class="form-control"
+        id="descripcion_enfermedad"
+        name="descripcion_enfermedad"
+        [(ngModel)]="disease.descripcion_enfermedad"
+      />
+    </div>
+
+  
+
+    <button
+      class="btn btn-success"
+      *ngIf="mode === 'add'"
+      type="submit"
+      (click)="addDisease()"
+    >
+      Agregar
+    </button>
+    <button
+      class="btn btn-success"
+      *ngIf="mode === 'edit'"
+      type="submit"
+      (click)="updateDisease()"
+    >
+      Editar
+    </button>
+    <button
+      class="btn btn-info"
+      style="margin-left: 20px"
+      type="submit"
+      (click)="clear()"
+    >
+      Limpiar
+    </button>
+    <button
+      class="btn btn-danger"
+      style="margin-left: 20px"
+      type="submit"
+      (click)="deleteDisease()"
+    >
+      Eliminar
+    </button>
+  </form>
+</div>

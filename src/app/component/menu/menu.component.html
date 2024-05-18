@@ -1,0 +1,33 @@
+<div class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+    <!-- Example Code -->
+    
+        
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand">Medpass</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="goToPage('medicine')">Medicina</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="goToPage('disease')">Enfermedad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="goToPage('patient')">Mi perfil</a>
+            </li>
+          </ul>
+          <span class="navbar-text" (click)="logOut()" style="cursor: pointer;">
+            Cerrar sesión
+          </span>
+        </div>
+      </div>
+    </nav>
+    
+      
+    <!-- End Example Code -->
+  </div>

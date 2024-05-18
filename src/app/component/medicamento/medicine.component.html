@@ -1,0 +1,130 @@
+
+<app-menu></app-menu>
+<div
+  class="card"
+  style="
+    padding: 20px;
+    margin: auto;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  "
+>
+  <h3 class="card-title" style="margin: auto">Registrar Medicamento</h3>
+  <form>
+    <div>
+      <div class="mb-3">
+        <label for="id" class="form-label">Identificación</label>
+
+        <div style="display: flex; flex-direction: row">
+          <div>
+            <input
+              type="number"
+              class="form-control"
+              id="id"
+              name="id"
+              [(ngModel)]="medicine.id"
+              [disabled]="mode === 'edit'"
+            />
+          </div>
+
+          <div>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              style="margin-left: 20px"
+              (click)="getMedicine()"
+            >
+              Consultar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="medicamento" class="form-label"
+        >Medicamento</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="medicamento"
+        name="medicamento"
+        [(ngModel)]="medicine.medicamento"
+        [disabled]="mode === 'edit'"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="fecha de prescripcion" class="form-label"
+        >Fecha de prescripción</label
+      >
+      <input
+        type="date"
+        class="form-control"
+        id="fecha de prescripcion"
+        name="fecha de prescripcion"
+        [(ngModel)]="medicine.fecha_prescripcion"
+        [disabled]="mode === 'edit'"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="dosis" class="form-label">Dosis</label>
+      <input
+        type="text"
+        class="form-control"
+        id="dosis"
+        name="dosis"
+        [(ngModel)]="medicine.dosis"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="instruccion uso" class="form-label"
+        >Instrucción de uso</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="instruccion uso"
+        name="instuccion uso"
+        [(ngModel)]="medicine.instruccion_uso"
+      />
+    </div>
+
+    <button
+      class="btn btn-success"
+      *ngIf="mode === 'add'"
+      type="submit"
+      (click)="addMedicine()"
+    >
+      Agregar
+    </button>
+    <button
+      class="btn btn-success"
+      *ngIf="mode === 'edit'"
+      type="submit"
+      (click)="updateMedicine()"
+    >
+      Editar
+    </button>
+    <button
+      class="btn btn-info"
+      style="margin-left: 20px"
+      type="submit"
+      (click)="clear()"
+    >
+      Limpiar
+    </button>
+    <button
+      class="btn btn-danger"
+      style="margin-left: 20px"
+      type="submit"
+      (click)="deleteMedicine()"
+    >
+      Eliminar
+    </button>
+  </form>
+</div>
